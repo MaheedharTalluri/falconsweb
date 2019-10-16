@@ -26,7 +26,7 @@ input[type="submit"],input[type="reset"],input[type=button] {
   width: 40%;
 }
 input[type=button] {
-  width: 10%;
+  width: 30%;
   position: absolute;
   top: 8px;
   right: 16px;
@@ -48,7 +48,7 @@ div {
 			<h1> POWER</h1>
 				<tr><td align="center"><input type="number" size=25  placeholder="Enter Base Value" name="num" required/></td></tr>
 				<tr><td align="center">
-				tr><td align="center"><input type="number" size=25  placeholder="Enter Power Value" name="num1" required/></td></tr>
+				<tr><td align="center"><input type="number" size=25  placeholder="Enter Power Value" name="num1" required/></td></tr>
 				<tr><td align="center">
 				<tr><td align="center"><input type="submit"  value="generate power" name="Button"  > <input type="Reset"></td></tr>
 			</table>
