@@ -2,6 +2,7 @@ package com.wipro.webappp;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,7 +35,7 @@ public class Controller extends HttpServlet {
 		if (trigerFrom.equals("generate power")) {
 		String a= req.getParameter("num");
 		String b= req.getParameter("num1");
-		int res=Integer.parseInt(a)^Integer.parseInt(b); 
+		int res=Math.pow(Integer.parseInt(a),Integer.parseInt(b)); 
 		out.println("<h1>"+a+"to the power of"+b+"="+ res +" "+"</h1>");
 		out.close();
 		//req.setAttribute("result", res);
