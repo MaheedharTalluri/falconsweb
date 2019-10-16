@@ -2,7 +2,7 @@ package com.wipro.webappp;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.lang.*;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -41,6 +41,7 @@ public class Controller extends HttpServlet {
 		//req.setAttribute("result", res);
 		//req.getRequestDispatcher("new.jsp").forward(req, resp);
 			}
+	}
 		int power(int p,int q){
 			int res=1;
 			for(int i=1;i<=q;i++){
@@ -49,6 +50,6 @@ public class Controller extends HttpServlet {
 			return res;
    		 }
 				
-	}
+	
 
 }
