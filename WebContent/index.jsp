@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Currency Convertor</title>
+<title>Power</title>
 <style type=text/css>
 
-input[name="num"] {
+input[name="num",name="num1"] {
   width: 100%;
   padding: 14px 20px;
   margin: 8px 0;
@@ -16,14 +16,14 @@ input[name="num"] {
   box-sizing: border-box;
 }
 input[type="submit"],input[type="reset"],input[type=button] {
-  background-color: #4CAF50;
+  background-color: #6a5acd;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  width: 40%;
+  width: 70%;
 }
 input[type=button] {
   width: 30%;
@@ -33,7 +33,7 @@ input[type=button] {
   font-size: 18px;
 }
 input[type="submit"]:hover,input[type="reset"]:hover, input[type="button"]:hover {
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 div {
