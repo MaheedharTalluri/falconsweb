@@ -22,14 +22,14 @@ public class Controller extends HttpServlet {
      */
     public Controller() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		PrintWriter out= resp.getWriter();
 		String trigerFrom = req.getParameter("Button");
 		if (trigerFrom.equals("generate power")) {
@@ -38,8 +38,7 @@ public class Controller extends HttpServlet {
 		int res=power(Integer.parseInt(a),Integer.parseInt(b)); 
 		out.println("<h1>"+a+" to the power of "+b+" = "+ res +" "+"</h1>");
 		out.close();
-		//req.setAttribute("result", res);
-		//req.getRequestDispatcher("new.jsp").forward(req, resp);
+		
 			}
 	}
 		int power(int p,int q){
