@@ -36,7 +36,7 @@ public class Controller extends HttpServlet {
 		String a= req.getParameter("num");
 		String b= req.getParameter("num1");
 		int res=power(Integer.parseInt(a),Integer.parseInt(b)); 
-		out.println("<h1>"+a+"to the power of"+b+"="+ res +" "+"</h1>");
+		out.println("<h1>"+a+" to the power of "+b+" = "+ res +" "+"</h1>");
 		out.close();
 		//req.setAttribute("result", res);
 		//req.getRequestDispatcher("new.jsp").forward(req, resp);
