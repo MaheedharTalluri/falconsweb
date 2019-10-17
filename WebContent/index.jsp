@@ -9,6 +9,7 @@
 
 input[name="num",name="num1"] {
   width: 100%;
+   height: 10%;
   padding: 14px 20px;
   margin: 8px 0;
   display: inline-block;
