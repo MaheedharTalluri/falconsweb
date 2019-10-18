@@ -1,28 +1,51 @@
-pipeline {
-    agent any
- 
-    stages {
+pipeline{
+agent any 
 
-      stage('clean')
-            {
-                steps
-                 { 
-                    sh 'mvn clean install'
-                 }
-            }
-     
-   stage("nexus"){
-        steps{
-        nexusArtifactUploader artifacts: [[artifactId: 'Webappp', classifier: '', file: '/var/lib/jenkins/workspace/Dyna_PipelineCK/target/Webappp-0.0.1.war', type: 'war']], credentialsId: 'c764851a-abf2-4235-95bf-42ff2731f750', groupId: 'com.wipro.webappp', nexusUrl: '18.224.155.110:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'devopstraining', version: '0.0.1'
-        }
-   }
-   
-   
-       stage('deploy'){
-        steps{
-           deploy adapters: [tomcat9(credentialsId: '7f748ccf-2ffc-44a4-8188-ba26e908e830', path: '', url: 'http://13.127.29.212:8090/')], contextPath: 'dyna_Proj', war: '**/*.war'
-                  }
+stages{
+
+stage('clean and build'){
+steps{
+       sh 'mvn clean'
+       sh 'mvn install'
+}
+
+}
+
+stage("SonarQube analysis") {
        
-       }
+            steps {
+              withSonarQubeEnv('sonarqube') {
+                sh 'mvn sonar:sonar'
+              }
+            }
+          }
+  
+       
+      /* stage("Quality Gate") {
+            steps {
+              timeout(time: 1, unit: 'HOURS') {
+                waitForQualityGate abortPipeline: true
+              }
+            }
+          }*/
+       
+       
+       
+       
+       
+   stage('Nexus Artifact Upload') {
+          steps{
+             withCredentials([usernamePassword(credentialsId: 'nexus_credentials', passwordVariable: 'pass', usernameVariable: 'userId')]) {
+            sh   'curl -F file=@target/auth-1.4.7.RELEASE.war -u $userId:$pass http://ec2-18-224-155-110.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/devopstraining/freestyle/auth-1.4.7.RELEASE.war'
+             
+             }}
+          }
+
+  stage('deploy'){
+    steps{
+    deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://18.217.217.34:8091')], contextPath: '/webapp', onFailure: false, war: '**/*.war'
+    }
+  }
+  
 }
 }
