@@ -47,11 +47,11 @@ div {
 	<form action ="controller" name="loginForm" method="post">
 			<table>
 			<h1> POWER</h1>
-				<tr><td align="center"><input type="number" size=25  placeholder="Enter Base Value" name="num" required/></td></tr>
-				<tr><td align="center">
-				<tr><td align="center"><input type="number" size=25  placeholder="Enter Power Value" name="num1" required/></td></tr>
-				<tr><td align="center">
-				<tr><td align="center"><input type="submit"  value="generate power" name="Button"  > <input type="Reset"></td></tr>
+				<tr><td><input type="number" size=25  placeholder="Enter Base Value" name="num" required/></td></tr>
+				<tr><td>
+				<tr><td><input type="number" size=25  placeholder="Enter Power Value" name="num1" required/></td></tr>
+				<tr><td>
+				<tr><td><input type="submit"  value="generate power" name="Button"  > <input type="Reset"></td></tr>
 			</table>
 			<br>
 	</form>
